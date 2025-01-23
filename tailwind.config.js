@@ -14,6 +14,9 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			fontFamily: {
+				proxima: ['ProximaNova', 'sans-serif'],
+			},
 			colors: {
 				primaryButton: "#fe2c55", // Thêm màu toàn cục
 				background: 'hsl(var(--background))',
@@ -25,9 +28,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				fontFamily: {
-					proxima: ['ProximaNova', 'sans-serif'],
-				},
+
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'

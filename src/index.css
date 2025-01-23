@@ -19,12 +19,5 @@
     src: url('/src/assets/fonts/TikTokFont-Bold.woff2') format('woff2');
     font-weight: 700;
   }
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+
 }
