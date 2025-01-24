@@ -6,8 +6,8 @@ import DefaultLayout from './layouts/DefaultLayout/DefaultLayout';
 
 function App() {
   return (
-    <Router className="overflow-y-scroll box-border">
-      <div className="overflow-y-clip size-6 leading-6  ">
+    <Router>
+      <div >
         <Routes>
           {publicRoutes.map((route, index) => {
             let Layout = DefaultLayout;
@@ -20,7 +20,7 @@ function App() {
             const Page = route.component;
             return <Route key={index} path={route.path}
               element={<Layout>
-                <Page />
+                <Page className="h-full w-full" />
               </Layout>} />
           })}
 

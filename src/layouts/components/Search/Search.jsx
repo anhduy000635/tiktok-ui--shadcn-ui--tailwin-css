@@ -3,12 +3,17 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SearchIcon } from "../../../Icons/icon";
 import { useState } from "react";
-
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover"
 function Search() {
     const [isFocused, setIsFocused] = useState(false);
 
     return (
         <div
+
             className={`flex relative w-[361px] h-[44px] bg-[rgba(22,24,35,0.06)] 
             rounded-3xl border-[1px] pl-4 
             ${isFocused ? "border-[rgba(22,24,35,0.75)]" : "border-transparent"}`}
@@ -16,11 +21,17 @@ function Search() {
             onBlur={() => setIsFocused(false)}
             tabIndex={-1} // Để container nhận sự kiện focus
         >
+            <Popover>
+                <PopoverTrigger>
+                    <PopoverContent></PopoverContent>
+                </PopoverTrigger>
+            </Popover>
             <input
                 placeholder="Search accounts and videos"
-                className="pr-10 h-full text-black text-lg bg-transparent flex-1 caret-primaryButton font-proxima outline-none placeholder-shown:peer"
+                className="pr-10 h-full text-black text-lg bg-transparent flex-1 caret-primaryButton  outline-none placeholder-shown:peer"
                 type="text"
             />
+
             <div className="flex items-center h-full">
                 <span className="w-px h-[28px] bg-gray-300 mx-auto"></span>
             </div>
@@ -44,6 +55,7 @@ function Search() {
             >
                 <SearchIcon />
             </button>
+
         </div>
     );
 }

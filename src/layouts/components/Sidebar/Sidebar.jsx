@@ -1,6 +1,8 @@
 function Sidebar() {
     return (
-        <div className=" text-3xl font-family font-bold leading-tight text-zinc-800">Sidebar</div>
+        <div className=" w-[356px] font-semibold min-h-96 pt-3 pb-6 pl-2 pr-0 ml-[-22px] text-3xl ">Sidebar
+        </div>
+
     );
 }
 

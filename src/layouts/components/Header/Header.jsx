@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import routesConfig from "/src/config/routes";
 import Search from "../Search/Search"
-import Menu from "../Sidebar/Menu/Menu";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faCircleQuestion,
-    faCoins,
-    faEarthAsia,
-    faEllipsisVertical,
-    faGear,
-    faKeyboard,
-    faUser,
-    faSignOut,
-} from '@fortawesome/free-solid-svg-icons';
+import Menu from "../Popper/Menu";
+import { InboxIcon, MessageIcon, UploadIcon } from "../../../Icons/icon";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//     faCircleQuestion,
+//     faCoins,
+//     faEarthAsia,
+//     faEllipsisVertical,
+//     faGear,
+//     faKeyboard,
+//     faUser,
+//     faSignOut,
+// } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
     // const curentUser = false;
@@ -60,7 +61,10 @@ function Header() {
                 <div >
                     <Search />
                 </div>
-                <div>
+                <div className="flex items-center">
+                    <span className="bg-transparent text-4xl text-[#161823] py-1 px-3 cursor-pointer   " ><UploadIcon /></span>
+                    <span className="bg-transparent text-4xl text-[#161823] py-1 px-3 cursor-pointer   " ><MessageIcon /></span>
+                    <span className="bg-transparent text-4xl text-[#161823] py-1 px-3 cursor-pointer   " ><InboxIcon /></span>
                     <Menu>
                         {/* <img src="/src/assets/images/noImage.png" alt="" /> */}
                     </Menu>

@@ -14,7 +14,7 @@ export const SearchIcon = () => (
 );
 export const UploadIcon = () => (
     <svg
-        className="w-12 h-12"
+        className="w-8 h-8"
 
         viewBox="0 0 32 32"
         fill="currentColor"
@@ -29,8 +29,7 @@ export const UploadIcon = () => (
 );
 export const MessageIcon = () => (
     <svg
-        className="w-10 h-10"
-
+        className="w-7 h-7"
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +43,7 @@ export const MessageIcon = () => (
 );
 export const InboxIcon = () => (
     <svg
-        className="w-12 h-12"
+        className="w-8 h-8"
 
         viewBox="0 0 32 32"
         fill="currentColor"
@@ -60,7 +59,7 @@ export const InboxIcon = () => (
 
 export const HomeIcon = () => (
     <svg
-        className="w-12 h-12"
+        className="w-8 h-8"
 
         data-e2e=""
         viewBox="0 0 48 48"
@@ -73,7 +72,7 @@ export const HomeIcon = () => (
 );
 export const HomeIconActive = () => (
     <svg
-        className="w-12 h-12"
+        className="w-8 h-8"
 
         data-e2e=""
         viewBox="0 0 48 48"
@@ -85,7 +84,7 @@ export const HomeIconActive = () => (
 );
 export const FollowingIcon = () => (
     <svg
-        className="w-12 h-12"
+        className="w-8 h-8"
 
         viewBox="0 0 48 48"
         fill="currentColor"
@@ -96,7 +95,7 @@ export const FollowingIcon = () => (
 );
 export const FollowingActiveIcon = () => (
     <svg
-        className="w-12 h-12"
+        className="w-8 h-8"
 
         data-e2e=""
         viewBox="0 0 48 48"
@@ -107,7 +106,7 @@ export const FollowingActiveIcon = () => (
 );
 export const LiveIcon = () => (
     <svg
-        className="w-12 h-12"
+        className="w-8 h-8"
 
         data-e2e=""
         viewBox="0 0 32 32"
@@ -121,7 +120,7 @@ export const LiveIcon = () => (
 );
 export const LiveIconActive = () => (
     <svg
-        className="w-12 h-12"
+        className="w-8 h-8"
 
         data-e2e=""
         viewBox="0 0 48 48"
