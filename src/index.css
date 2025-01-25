@@ -19,6 +19,7 @@
     src: url('/src/assets/fonts/TikTokFont-Bold.woff2') format('woff2');
     font-weight: 700;
   }
+
   :root {
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
