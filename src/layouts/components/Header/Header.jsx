@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom';
 import routesConfig from '/src/config/routes';
 import Search from '../Search/Search';
+import Search1 from '../Search/Search1';
 import Menu from '../Popper/Menu';
 import { InboxIcon, MessageIcon, UploadIcon } from '../../../Icons/icon';
 import { Button } from '@/components/ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoins, faEarthAsia, faGear, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
-import { faCircleQuestion, faKeyboard } from '@fortawesome/free-regular-svg-icons';
+import {
+    faCoins,
+    faEarthAsia,
+    faGear,
+    faSignOut,
+    faUser,
+    faCircleQuestion,
+    faKeyboard,
+} from '@fortawesome/free-solid-svg-icons';
+import {} from '@fortawesome/free-regular-svg-icons';
 
 const MENU_ITEMS = [
     {
@@ -84,7 +93,7 @@ function Header() {
                     </Link>
                 </div>
 
-                <Search />
+                <Search1 />
                 <div className="flex items-center">
                     {currentUser ? (
                         <div className="flex items-center ml-0">

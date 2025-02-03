@@ -28,12 +28,10 @@ function Search() {
                     />
                 </PopoverTrigger>
                 <PopoverContent
-                    className="max-h-80 overflow-auto   bg-white w-[361px] p-0 min-h-48 mt-1 rounded-xl pt-3 border-0 pb-3 ml-[-14px]   shadow-lg "
+                    className="max-h-72 overflow-auto   bg-white w-[361px] p-0 min-h-48 mt-1 rounded-xl pt-3 border-0 pb-3 ml-[-14px]   shadow-lg "
                     align="start"
                 >
-                    <h4 className="px-3 py-1 text-sm font-semibold text-[rgba(22, 24, 35, 0.5)] font-semibold">
-                        Accounts
-                    </h4>
+                    <h4 className="px-3 py-1 text-sm  text-[rgba(22, 24, 35, 0.5)] font-semibold">Accounts</h4>
                     <AccountItem />
                     <AccountItem />
                     <AccountItem />

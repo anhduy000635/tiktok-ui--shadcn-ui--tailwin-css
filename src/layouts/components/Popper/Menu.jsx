@@ -1,20 +1,50 @@
 import PropTypes from 'prop-types';
 import { Button } from '@/components/ui/button';
 
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import MenuItem from './MenuItem';
+import { useState } from 'react';
+import Header from './Header';
 
-function Menu({ items, onChange, currentUser }) {
+function Menu({ items = [], onChange, currentUser }) {
+    const [history, setHistory] = useState([{ data: items }]);
+    const current = history[history.length - 1];
+    const renderItems = () => {
+        return current.data.map((item, index) => {
+            const isParent = !!item.children;
+            return (
+                <Link to={item.to} key={index}>
+                    <MenuItem
+                        data={item}
+                        onClick={() => {
+                            if (isParent) {
+                                setHistory((prev) => [...prev, item.children]);
+                            } else {
+                                onChange(item);
+                            }
+                        }}
+                    />
+                </Link>
+            );
+        });
+    };
+    const handleBack = () => {
+        setHistory((prev) => prev.slice(0, prev.length - 1));
+    };
+    const renderResult = (attrs) => (
+        <div className="w-[224px] pt-2" tabIndex="-1" {...attrs}>
+            {history.length > 1 && <Header title={current.title} onBack={handleBack} />}
+            <div className="overflow-y-auto">{renderItems()}</div>
+        </div>
+    );
+
     return (
         <DropdownMenu className="overflow-hidden">
-            <DropdownMenuTrigger asChild className="outline-none">
+            <DropdownMenuTrigger asChild className="outline-none  px-3">
                 <div>
                     {currentUser ? (
                         <Avatar className="w-8 h-8">
@@ -30,20 +60,13 @@ function Menu({ items, onChange, currentUser }) {
             </DropdownMenuTrigger>
 
             <DropdownMenuContent
-                modal={false}
+                asChild
+                modal={undefined}
                 side="bottom"
                 align="end"
-                className="w-56 max-w-56   pt-2 mt-2 max-h-60 scrollbar-thin overflow-y-auto bg-white shadow-lg rounded-xl p-2 border border-gray-200"
+                className="w-[216px] max-w-56  pt-2 h-full  max-h-80 scrollbar-thin overflow-y-auto bg-white shadow-lg rounded-xl  border border-gray-200 "
             >
-                {items?.map((item, index) => (
-                    <DropdownMenuItem
-                        key={index}
-                        className="py-2 px-4  text-gray-900 font-medium hover:bg-gray-100 rounded-md cursor-pointer"
-                        onClick={() => onChange?.(item)}
-                    >
-                        {item.icon} {item.title}
-                    </DropdownMenuItem>
-                ))}
+                {renderResult()}
             </DropdownMenuContent>
         </DropdownMenu>
     );
